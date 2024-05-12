@@ -13,7 +13,8 @@ missmdatools performs multiple functions as :
   * estim_ncpPCA: Estimate the number of dimensions for the Principal Components Analysis by cross - validation.
   * estim_ncpMCA: Estimate the number of dimensions for the Multiple Correspondence Multiple by cross - validation.
   * estim_ncpFAMD: Estimate the number of dimensions for the Factor Analysis of Mixed Data by cross - validation.
-* Simple imputation :  
+  * estim_ncpPCAMIX: Estimate the number of dimensions for the Principal Components Analysis of Mixed Data by cross - validation.
+* Simple imputation :
   * imputePCA : impute dataset with Principal Components Analysis
   * imputeCA : impute contingency table with Correspondence Analysis
   * imputeMCA : impute categorical adatset with Multiple Correspondence Analysis
@@ -25,8 +26,9 @@ missmdatools performs multiple functions as :
 * Multiple imputation :
   * MIPCA : Multiple Imputation with Principal Components Analysis
   * MIMCA : Multiple Imputation with Multiple Correspondence Analysis
-  * MIMFA : Multiple Imputation with Multiple Factor Analysis (continuous variables)
   * MIFAMD : Multiple Imputation with Factor Analysis of Mixed Data
+  * MIPCAMIX : Multiple Imputation with Principal Components Analysis of Mixed Data
+  * MIMFA : Multiple Imputation with Multiple Factor Analysis (continuous variables)
   * MIMFAQUAL: Multiple Imputation with Multiple Factor Analysis for Qualitative variables
   * MIMFAMIX: Multiple Imputation with Multiple Factor Analysis of mixed Data/groups
 
