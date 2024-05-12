@@ -17,7 +17,7 @@ missmdatools performs multiple functions as :
 * Simple imputation :
   * imputePCA : impute dataset with Principal Components Analysis
   * imputeCA : impute contingency table with Correspondence Analysis
-  * imputeMCA : impute categorical adatset with Multiple Correspondence Analysis
+  * imputeMCA : impute categorical dataset with Multiple Correspondence Analysis
   * imputeFAMD : impute mixed dataset with Factor Analysis of Mixed Data
   * imputePCAMIX : impute mixed dataset with Principal Components Analysis of Mixed Data
   * imputeMFA : impute dataset with variables structured into groups of variables (continuous variables)
