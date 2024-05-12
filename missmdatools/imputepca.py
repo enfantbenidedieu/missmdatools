@@ -202,7 +202,7 @@ def imputePCA(X,
             Z = (Z - means)/std
 
             if quanti_sup is not None:
-                Z.iloc[:,quanti_sup] = Z.iloc[:,quanti_sup]*1e-08
+                Z.loc[:,quanti_sup] = Z.loc[:,quanti_sup]*1e-08
             
             ### Singular Value Decomposition
             svd = svd_triplet(Z,row_weights=ind_weights,n_components=ncp)
