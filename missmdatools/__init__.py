@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from .imputepca import imputePCA
+from .imputeca import imputeCA
 
 __version__ = '0.0.1'
 __name__ = "missmdatools"
