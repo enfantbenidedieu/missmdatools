@@ -9,12 +9,13 @@ missmdatools is a python package for Handling Missing Values in Multivariate Dat
 ## Why use missmdatools?
 
 missmdatools performs multiple functions as :
-* Estimate the number of components:
+1. **Estimate the number of components:**
   * estim_ncpPCA: Estimate the number of dimensions for the Principal Components Analysis by cross - validation.
   * estim_ncpMCA: Estimate the number of dimensions for the Multiple Correspondence Multiple by cross - validation.
   * estim_ncpFAMD: Estimate the number of dimensions for the Factor Analysis of Mixed Data by cross - validation.
   * estim_ncpPCAMIX: Estimate the number of dimensions for the Principal Components Analysis of Mixed Data by cross - validation.
-* Simple imputation :
+
+2. **Simple imputation :**
   * imputePCA : impute dataset with Principal Components Analysis
   * imputeCA : impute contingency table with Correspondence Analysis
   * imputeMCA : impute categorical dataset with Multiple Correspondence Analysis
@@ -23,7 +24,8 @@ missmdatools performs multiple functions as :
   * imputeMFA : impute dataset with variables structured into groups of variables (continuous variables)
   * imputeMFAQUAL : impute dataset with variables structured into groups of variables (categoricals variables)
   * imputeMFAMIX : impute dataset with variables structured into groups of variables (mixed of groups)
-* Multiple imputation :
+
+3. **Multiple imputation :**
   * MIPCA : Multiple Imputation with Principal Components Analysis
   * MIMCA : Multiple Imputation with Multiple Correspondence Analysis
   * MIFAMD : Multiple Imputation with Factor Analysis of Mixed Data
@@ -38,7 +40,7 @@ missmdatools performs multiple functions as :
 
 missmdatools requires
 
-```
+```python
 Python >=3.10
 ```
 
@@ -46,7 +48,7 @@ Python >=3.10
 
 You can install missmdatools using pip:
 
-```
+```python
 pip install missmdatools
 ```
 
@@ -62,5 +64,5 @@ pip install missmdatools
 
 ## Author(s)
 
-Duvérier DJIFACK ZEBAZE ([duverierdjifack@gmail.com](duverierdjifack@gmail.com))
+Duvérier DJIFACK ZEBAZE ([djifacklab@gmail.com](duverierdjifack@gmail.com))
 
