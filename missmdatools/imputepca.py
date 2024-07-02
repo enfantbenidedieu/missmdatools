@@ -27,29 +27,43 @@ def imputePCA(X,
 
     Description
     -----------
-    impute the missing values of a dataset with the Principal Components Analysis (PCA) model.
-    It can be used as a preliminary step before performing a PCA on an complete dataset.
-    The output of the algorithm can be used as an input of the PCA function of the scientisttools 
-    package in order to perform PCA on an incomplete dataset.
+    Impute the missing values of a dataset with the Principal Components Analysis (PCA) model. It can be used as a preliminary step before performing a PCA on an complete dataset. The output of the algorithm can be used as an input of the PCA function of the scientisttools package in order to perform PCA on an incomplete dataset.
+
+    Usage
+    -----
+    ```python
+    >>> imputePCA(X,
+                n_components=5, 
+                standardize=True,
+                method = "regularized",
+                ind_weights = None,
+                ind_sup = None,
+                quanti_sup = None,
+                quali_sup = None,
+                ridge_coef = 1,
+                threshold = 1e-6,
+                random_state = None,
+                nb_init = 1,
+                max_iter = 1000)
+    ```
 
     Parameters
     ----------
-    X : pandas/polars dataframe with continuous variables of shape (n_rows, n_columns) containing missing values
+    `X` : pandas/polars dataframe with continuous variables of shape (n_rows, n_columns) containing missing values
 
-    n_components : an integer corresponding to the number of components used to predict the missing values (default is 5)
+    `n_components` : an integer corresponding to the number of components used to predict the missing values (default is 5)
 
-    standardize : a boolean, default = True
-        - If True : the data are scaled to unit variance.
-        - If False : the data are not scaled to unit variance.
+    `standardize` : a boolean, default = True
+        * If True : the data are scaled to unit variance.
+        * If False : the data are not scaled to unit variance.
     
-    method : method to used. Either 'regularized' or 'em'
-        - 'regularized' for regularized iterative algorithm
-        - 'em' for expectation - maximization algorithm
+    `method` : a string specifying the method to used. Either 'regularized' or 'em'
+        * 'regularized' for regularized iterative algorithm
+        * 'em' for expectation - maximization algorithm
     
-    ind_weights : an optional individuals weights (by default, a list/tuple of 1/(number of active individuals) for uniform individuals weights),
-                    the weights are given only for active individuals.
+    `ind_weights` : an optional individuals weights (by default, a list/tuple of 1/(number of active individuals) for uniform individuals weights), the weights are given only for active individuals.
     
-    ind_sup : an integer or a list/tuple indicating the indexes of the supplementary individuals
+    `ind_sup` : an integer or a list/tuple indicating the indexes of the supplementary individuals
 
     quanti_sup : an integer or a list/tuple indicating the indexes of the quantitative supplementary variables
 
@@ -70,10 +84,11 @@ def imputePCA(X,
 
     Return
     ------
-    a dictionary containing two elements
-    completeObs : the imputed dataset; the observed values are kept for the non-missing entries and the missing values are replaced by the predicted ones.
+    dictionary containing two elements
 
-    fittedX : the reconstructed data
+    `completeObs` : the imputed dataset; the observed values are kept for the non-missing entries and the missing values are replaced by the predicted ones.
+
+    `fittedX` : the reconstructed data
 
     References
     ----------
@@ -85,7 +100,13 @@ def imputePCA(X,
 
     Author(s)
     ---------
-    Duvérier DJIFACK ZEBAZE duverierdjifack@gmail.com
+    Duvérier DJIFACK ZEBAZE djifacklab@gmail.com
+
+    Examples
+    --------
+    ```python
+    
+    ```
     """
     # check if X is an instance of polars dataframe
     if isinstance(X,pl.DataFrame):
@@ -97,6 +118,7 @@ def imputePCA(X,
         f"{type(X)} is not supported. Please convert to a DataFrame with "
         "pd.DataFrame. For more information see: "
         "https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html")
+    
     # Weighted average and standard deviation with missing values
     def weighted_avg_and_std(X, weights):
         average = np.ma.average(np.ma.array(X.values, mask=X.isnull().values), weights=weights, axis=0)
